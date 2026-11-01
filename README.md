@@ -118,3 +118,4 @@ Auxilio com o esqueleto, autenticação JWT, tratamento de erros e webhook e alg
 - A distância é em linha reta (fórmula de Haversine), não por rota.
 - O webhook é enviado de forma síncrona, sem reenvio automático em caso de falha; o resultado fica registrado em `webhook_status`.
 - Usado para testes com apenas dados fictícios ou abertos (LGPD).
+- Auxilio de documentação README para melhor esclarecimento
