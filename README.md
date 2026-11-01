@@ -83,16 +83,6 @@ As tabelas são criadas automaticamente na primeira execução. O script SQL de 
 3. Cadastre um doador próximo (até 30 km) e publique um lote.
 4. Veja a notificação chegar em tempo real no webhook.site.
 
-## Testes
-
-```bash
-pytest -v
-```
-
-31 testes automatizados (unitários e de integração): autenticação, papéis, validação, paginação/filtro/ordenação, cache ETag, ranking de compatibilidade, webhook (simulado), fluxo de resgate e nomenclatura das URIs. Os testes usam um banco temporário e **não fazem chamadas de rede reais**.
-
-Coleção Postman/Insomnia: importe `docs/openapi.json` (Postman: *Import → File*) e salve exemplos de sucesso e de erro (400, 401, 403, 404, 409).
-
 ## Princípios REST aplicados
 
 - **Cliente-servidor e stateless:** cada requisição leva o próprio token JWT; o servidor não guarda sessão.
@@ -126,5 +116,5 @@ Compatibilidade da regra de negócio com a FastAPI
 Auxilio com o esqueleto, autenticação JWT, tratamento de erros e webhook e alguns dos testes para garantir que funcionam
 
 - A distância é em linha reta (fórmula de Haversine), não por rota.
-- O webhook é enviado de forma síncrona (com timeout curto), sem reenvio automático em caso de falha; o resultado fica registrado em `webhook_status`.
-- Use apenas dados fictícios ou abertos (LGPD).
+- O webhook é enviado de forma síncrona, sem reenvio automático em caso de falha; o resultado fica registrado em `webhook_status`.
+- Usado para testes com apenas dados fictícios ou abertos (LGPD).
